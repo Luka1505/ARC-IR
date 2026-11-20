@@ -1,0 +1,12 @@
+torch>=2.1
+numpy
+scipy
+pyyaml
+# real-data scripts only (data_tools/):
+rasterio
+pyproj
+pystac-client
+planetary-computer
+stackstac
+# optional, for the LPIPS metric and the pretrained HAT backbone:
+lpips

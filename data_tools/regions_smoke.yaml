@@ -1,0 +1,33 @@
+calibration:
+- nagpur_central
+- odisha_chilika
+- punjab_ludhiana
+- raichur_krishna
+- rann_kutch
+- satpura_forest
+test:
+- saurashtra
+- thar_jaisalmer
+- udaipur_hills
+- vidarbha_amravati
+- visakhapatnam_coast
+- western_ghats
+train:
+- assam_brahmaputra
+- bastar_forest
+- bengal_sundarbans
+- bengaluru
+- cauvery_delta
+- chennai_coast
+- deccan_pune
+- dehradun_foothills
+- delhi_ncr
+- goa_coast
+- godavari_plain
+- hyderabad_deccan
+- indus_gangetic_kanpur
+- jaipur_arid
+- kerala_backwaters
+- krishna_delta
+- lucknow_plain
+- mumbai_konkan

@@ -1,0 +1,11 @@
+dataset/
+dataset_big/
+runs/
+logs/
+__pycache__/
+*.pyc
+*.zip
+*.bak
+*.npy
+*.npz
+*.pth

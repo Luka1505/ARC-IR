@@ -1,0 +1,47 @@
+# Geographic split: every region (bounding box) belongs to exactly ONE of train / calibration / test.
+# bbox = [min_lon, min_lat, max_lon, max_lat]. Each box is about 0.5 x 0.5 degrees (~55 km).
+# The coordinates are APPROXIMATE (picked from memory, not checked on a map): run
+#   python -m data_tools.preview --region <name>   after the first download and look at the picture.
+# Edit freely: add regions, move a region to a different split BEFORE downloading (never after training).
+train: [krishna_delta, godavari_plain, deccan_pune, thar_jaisalmer, western_ghats, indus_gangetic_kanpur,
+        hyderabad_deccan, bengaluru, mumbai_konkan, delhi_ncr, punjab_ludhiana, odisha_chilika,
+        bastar_forest, satpura_forest, kerala_backwaters, cauvery_delta, saurashtra, assam_brahmaputra,
+        vidarbha_amravati, raichur_krishna]
+calibration: [chennai_coast, nagpur_central, jaipur_arid, visakhapatnam_coast]
+test: [rann_kutch, dehradun_foothills, bengal_sundarbans, lucknow_plain, goa_coast, udaipur_hills]
+bbox:
+  krishna_delta:        [80.6, 15.7, 81.1, 16.2]
+  godavari_plain:       [81.6, 16.8, 82.1, 17.3]
+  deccan_pune:          [73.6, 18.3, 74.1, 18.8]
+  thar_jaisalmer:       [70.7, 26.7, 71.2, 27.2]
+  western_ghats:        [75.5, 12.9, 76.0, 13.4]
+  indus_gangetic_kanpur: [80.1, 26.2, 80.6, 26.7]
+  hyderabad_deccan:     [78.2, 17.2, 78.7, 17.7]
+  bengaluru:            [77.4, 12.8, 77.9, 13.3]
+  mumbai_konkan:        [72.8, 18.9, 73.3, 19.4]
+  delhi_ncr:            [76.9, 28.4, 77.4, 28.9]
+  punjab_ludhiana:      [75.6, 30.7, 76.1, 31.2]
+  odisha_chilika:       [85.0, 19.5, 85.5, 20.0]
+  bastar_forest:        [81.9, 19.0, 82.4, 19.5]
+  satpura_forest:       [78.0, 22.2, 78.5, 22.7]
+  kerala_backwaters:    [76.1, 9.3, 76.6, 9.8]
+  cauvery_delta:        [78.9, 10.6, 79.4, 11.1]
+  saurashtra:           [70.5, 21.5, 71.0, 22.0]
+  assam_brahmaputra:    [91.5, 26.0, 92.0, 26.5]
+  vidarbha_amravati:    [77.5, 20.7, 78.0, 21.2]
+  raichur_krishna:      [76.9, 16.0, 77.4, 16.5]
+  chennai_coast:        [80.0, 12.8, 80.5, 13.3]
+  nagpur_central:       [78.9, 20.9, 79.4, 21.4]
+  jaipur_arid:          [75.6, 26.7, 76.1, 27.2]
+  visakhapatnam_coast:  [83.0, 17.5, 83.5, 18.0]
+  rann_kutch:           [70.0, 23.5, 70.5, 24.0]
+  dehradun_foothills:   [77.8, 30.1, 78.3, 30.6]
+  bengal_sundarbans:    [88.6, 21.9, 89.1, 22.4]
+  lucknow_plain:        [80.7, 26.6, 81.2, 27.1]
+  goa_coast:            [73.6, 15.2, 74.1, 15.7]
+  udaipur_hills:        [73.4, 24.3, 73.9, 24.8]
+datetime: "2021-01-01/2025-12-31"   # Landsat 9 flies from late 2021, so both satellites are included
+max_scenes_per_region: 40
+max_cloud_percent: 20
+tile_size: 128                       # 128 for the 4 GB GPU; re-tile at 256 for the DGX
+min_valid_fraction: 0.95
